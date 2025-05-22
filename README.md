@@ -11,3 +11,13 @@
    . EditorHistory: Manages the history of state records (Caretaker), allowing saving and undoing.
 
    . Program: The Main function is used to run the program and simulate the actions: entering text, saving state, and undoing. 
+
+4. Principle of operation:
+
+   . Users enter the text through the Type() method of Texteditor.
+
+   . When the current state of the text needs to be saved, the program calls Save() → creates a TextEditorMemento that saves the current content.
+
+   . The EditorHistory object stores the mementos in a stack in chronological order.
+
+   . When the user performs Undo, the program calls Undo() to get the last memento from the stack and restore the state of the TextEditor.
