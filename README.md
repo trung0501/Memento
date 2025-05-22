@@ -21,3 +21,21 @@
    . The EditorHistory object stores the mementos in a stack in chronological order.
 
    . When the user performs Undo, the program calls Undo() to get the last memento from the stack and restore the state of the TextEditor.
+
+5. Advantages:
+
+   . Easy to undo: Save and restore state simply, just manipulate the stack.
+
+   . Clear separation of roles: According to the SOLID software design principles, classes have their own responsibilities.
+
+   . No encapsulation violation: TextEditor's internal state is not directly accessed from the outside.
+
+   .  Good extensibility: Can extend more functions such as Redo, history limit, etc.
+
+6. Limit:
+
+   . Only supports simple Undo: No Redo function.
+
+   . Stores the entire state each time you save: If the text is large, storing many mementos will consume memory.
+
+   . Unlimited number of mementos: If the number of saves is not controlled, the stack can grow indefinitely, causing resource consumption.
